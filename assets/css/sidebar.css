@@ -1,0 +1,142 @@
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  width: 150px;
+  height: 100%;
+  padding-top: 50px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.scroll-line {
+  position: absolute;
+  left: 45.5%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: var(--background-color);
+  height: 0;
+  transition: height 0.3s ease;
+  z-index: 0;
+  margin-top: 15px;
+  max-height: 50%;
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  animation: slide-in 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.sidebar ul li a {
+  color: var(--primary-red);
+  font-size: var(--icon-size);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+a {
+  border: none !important;
+}
+.sidebar ul li a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+  background-color: var(--background-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.sidebar ul li a.active i {
+  background-color: var(--primary-red);
+  color: white;
+}
+.sidebar ul li a:hover {
+  transform: scale(1.2);
+  color: var(--black-text-color);
+}
+.sidebar ul li a .link-text {
+  display: none;
+}
+
+.sidebar.expanded ul li a .link-text {
+  display: inline;
+}
+
+.main-content {
+  padding-left: 80px;
+  transition: padding-left 0.3s ease;
+}
+
+.sidebar ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.sidebar ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sidebar ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.sidebar ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.sidebar ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 925px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    background-color: var(--background-color);
+  }
+
+  .scroll-line {
+    display: none;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+  }
+
+  .sidebar ul li {
+    justify-content: center;
+  }
+}
