@@ -1,7 +1,9 @@
 # Muthana Abo Aleez - Portfolio
 
 Welcome to my portfolio! I'm Muthana Abo Aleez, a Front-End Developer and Quality Assurance Developer. This portfolio showcases my skills, projects, education, and how you can get in touch with me.
+## Live Demo
 
+You can view my portfolio live at [https://muthana-abo-alez1.github.io/Portfolio/](https://muthana-abo-alez1.github.io/Portfolio/).
 ## Table of Contents
 
 - [Overview](#overview)
