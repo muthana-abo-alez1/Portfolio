@@ -1,11 +1,11 @@
 :root {
-  --primary-red: red;
+  --primary-red: #ed0a0a; 
   --secondary-gray: rgba(207, 207, 207);
   --background-color: rgba(207, 207, 207);
-  --header--background-color: rgba(207, 207, 207, 0.8);
+  --header-background-color: rgba(207, 207, 207, 0.8);
   --black-text-color: black;
   --white-text-color: white;
-  --button-text-color: red;
+  --button-text-color: #ed0a0a;
   --button-border-color: rgba(207, 207, 207);
   --button-background-color: rgba(207, 207, 207);
   --header-height: 80px;
@@ -33,7 +33,7 @@ body {
   height: 80px;
   width: 100%;
   z-index: 100;
-  background-color: var(--header--background-color);
+  background-color: var(--header-background-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
