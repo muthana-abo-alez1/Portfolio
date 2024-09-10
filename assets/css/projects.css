@@ -1,0 +1,123 @@
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projects h1 {
+  font-size: var(--font-large);
+  font-weight: bolder;
+  margin: 20px 0;
+}
+
+.projects h1 span {
+  color: var(--primary-red);
+}
+
+.projects-slider {
+  display: flex;
+  object-fit: cover;
+  gap: 10px;
+  height: 400px;
+}
+
+.project {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  transition: flex 0.5s ease;
+  min-width: 260px;
+}
+
+.project img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--secondary-gray);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.project:hover {
+  flex: 3;
+}
+
+.project-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white-text-color);
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+.project-details {
+  color: var(--white-text-color);
+}
+.project:hover .project-description {
+  transform: translateY(0);
+}
+.project-list-icon ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  margin: 20px auto 10px auto;
+  padding: 0;
+}
+.project-list-icon ul a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-text-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.project-list-icon .fa-youtube {
+  color: #ff0000;
+}
+
+.project-list-icon .fa-github {
+  color: #181717;
+}
+
+.project-list-icon .fa-linkedin {
+  color: #0a66c2;
+}
+.project:hover img {
+  transform: scale(1.1);
+}
+.active-section .projects-slider {
+  animation: slideInLefttoRight 1s ease forwards;
+}
+
+.projects-slider .project:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.projects-slider .project:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.projects-slider .project:nth-child(1) {
+  animation-delay: 0.9s;
+}
+@media (max-width: 925px) {
+  .projects {
+    height: max-content;
+  }
+  .projects h1.title {
+    padding-top: 120px;
+  }
+  .projects-slider {
+    flex-wrap: wrap;
+    margin: 0 20px;
+    height: max-content;
+    width: 80vw;
+  }
+}

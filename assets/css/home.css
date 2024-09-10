@@ -1,0 +1,121 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+}
+
+.home img {
+  width: 350px;
+  height: 350px;
+  border-radius: 100px;
+  border: 5px solid var(--background-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.home h1 {
+  font-size: 6em;
+  font-weight: bolder;
+  margin: 20px 0;
+  color: var(--primary-red);
+}
+
+.home div {
+  max-width: 700px;
+}
+
+.home p {
+  font-size: var(--font-small);
+  font-weight: 500;
+  max-width: 500px;
+}
+
+.home img::after {
+  content: "";
+  position: absolute;
+  z-index: -3;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border-style: outset;
+  border: 30px solid rgb(22, 17, 17);
+  box-shadow: rgb(255 255 255 / 40%) 0px 0px 0px 4px inset;
+  transform: rotateX(10deg) rotateY(10deg);
+}
+
+.btn-view-cv {
+  height: 50px;
+  width: 120px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  border: solid 1px var(--button-border-color);
+  position: relative;
+  overflow: hidden;
+  color: var(--button-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-view-cv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-gray);
+  z-index: -1;
+  transition: all 0.7s ease-in-out;
+}
+
+.btn-view-cv:hover::before {
+  left: 0;
+}
+
+.btn-view-cv:hover {
+  color: var(--black-text-color);
+}
+@media (max-width: 925px) {
+  .home {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .home .home-content {
+    width: 90%;
+  }
+  .home h1 {
+    font-size: var(--font-medium);
+  }
+  .home .home-content h1,
+  h2 {
+    margin: 0;
+  }
+  .home .home-img {
+    margin-top: 100px;
+    order: 1;
+  }
+  .home .home-content {
+    order: 2;
+  }
+}
+
+@keyframes slideInLefttoRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.active-section .home-img,
+.active-section .home-content {
+  animation: slideInLefttoRight 1s ease forwards;
+}
